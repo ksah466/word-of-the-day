@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0, 1rem;
+  padding: 0;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 5px solid rgb(249, 250, 251);
+  border-top-color: rgb(17, 24, 39);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  max-width: 600px;
+  margin-top: 14vh;
+
+  margin-left: 2vw;
+  margin-right: 2vw;
+
+  border-radius: 1%;
+
+  padding: 1rem;
+
+  background-color: rgb(249, 250, 251);
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(17, 24, 39);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#date {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+#word {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  margin-top: 0;
+  text-align: center;
+}
+
+#phonetic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+#phonetic > p {
+  color: rgb(107, 114, 128);
+}
+
+#phonetic .material-icons {
+  margin-left: 0.5rem;
+  cursor: pointer;
+  background: rgba(59, 130, 246);
+  color: rgb(239, 246, 255);
+  padding: 2px;
+  border-radius: 50%;
+  user-select: none;
+}
+
+#phonetic > audio {
+  display: none;
+}
+
+#definition {
+  text-align: justify;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #date {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  #word {
+    font-size: 4.5rem;
+    line-height: 1;
+    text-align: left;
+  }
+
+  #phonetic {
+    justify-content: left;
+    margin-bottom: 1.25rem;
+  }
+}
