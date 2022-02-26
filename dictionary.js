@@ -1,7 +1,7 @@
 async function getHTML() {
     const requestUrl = "https://www.dictionary.com/e/word-of-the-day/"
     //const requestUrl = "https://www.dictionary.com/e/word-of-the-day/columbarium-2021-11-01/"
-    
+
     const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(requestUrl)}`)
 
     if (response.ok) {
@@ -29,7 +29,8 @@ async function getData() {
         defintiion: doc.querySelector("div.otd-content.wotd-content > div > div:nth-child(1) > div.otd-item-wrapper-content > div.wotd-item > div > div.otd-item-headword__pos-blocks > div > p:nth-child(2)").innerText.trim(),
     }
 
-    data.phonetic.text = data.phonetic.text.slice(1, -1).trim()
+    let [phonetic, ipa] = data.phonetic.text.trim().split("]").slice(0, 2).map(e => e.trim().slice(1).trim())
+    data.phonetic.text = `${ipa} | ${phonetic}`
     data.date = new Date(data.date)
 
     return data
